@@ -6,6 +6,7 @@ const passwordLogin = document.getElementById('passwordLogin');
 window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
+      alert('hola')
       window.location = "form.html"
     }
   })
