@@ -21,23 +21,23 @@
         <input type="text" placeholder="Enter Username" id="email_login">
 
         <label for="psw"><b>Password</b></label>
-        <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+        <input id="passwordLogin" type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <button type="button" id="login">Login</button>
+
       </div>
       <div>
       <div>
-        <p class="go-register">¿Todavía no eres miembro?</p><a href="#" id="registerLink" class="link-to-register"> Únete ahora</a>
+        <a href="register.html">Regístrate</a>
       </div>
       </div>
     </form>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script src="js/firebase.js"></script>
   <script src="js/form.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
   </body>
 
 </html>

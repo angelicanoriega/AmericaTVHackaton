@@ -1,7 +1,3 @@
-let login = document.getElementById('login')
-let email = document.getElementById('email_login')
-let password = document.getElementById('password')
-
 const guardaDatos = (user) => {
   let usuario = {
     uid: user.uid,
@@ -13,7 +9,12 @@ const guardaDatos = (user) => {
   .set(usuario)
 }
 
-const register = (email, password) => {
+const close = () => {
+    firebase.auth().signOut()
+    .then(() => alert('Saliendo...'))
+    .catch((error) => console.log(error))
+  };
+const register1 = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .ther(result => {
       const user = {

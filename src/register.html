@@ -20,24 +20,30 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
 
+      <label for="name"><b>Nombre</b></label>
+      <input id="name" type="text" placeholder="Enter name" name="name" required>
       <label for="email"><b>Email</b></label>
-      <input id="email_login" type="text" placeholder="Enter Email" name="email" required>
+      <input id="email" type="text" placeholder="Enter Email" name="email" required>
 
-      <label id="password" for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw"><b>Password</b></label>
+      <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input id="password_repeat" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <!-- <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input id="password_repeat" type="password" placeholder="Repeat Password" name="psw-repeat" required> -->
 
+      <button type="button" id="register1111">Registrate</button>
       <div>
-        <p class="go-register">ya tengo una cuenta</p><a href="#" id="loginLink" class="link-to-login"> Únete ahora</a>
+        <a href="index.html">Regístrate</a>
       </div>
 
     </div>
   </form>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script src="js/firebase.js"></script>
+
   <script src="js/form.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
