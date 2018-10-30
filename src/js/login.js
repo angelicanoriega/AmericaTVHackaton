@@ -38,3 +38,13 @@ const login1 = (email, password) => {
     .then(result => {
     })
 }
+
+const saveProgram = (hour, hourFinal, programName, date) => {
+  const programas = {
+    minutes: hour,
+    hourFinal: hourFinal,
+    programName: programName,
+    date: date
+  }
+  firebase.database().ref('Programas/' + programName).push(programas)
+}
