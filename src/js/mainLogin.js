@@ -7,10 +7,13 @@ window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       alert('hola')
-      window.location = "form.html"
+      window.location = "calendario.html"
     }
   })
 }
 login.addEventListener('click', () => {
   login1(email_login.value, passwordLogin.value)
 })
+
+// let userUid = firebase.auth().currentUser;
+// console.log(userUid);

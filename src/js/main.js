@@ -8,7 +8,7 @@ window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       alert('hola')
-      window.location = "form.html"
+      window.location = "calendario.html"
     }
   })
 }
