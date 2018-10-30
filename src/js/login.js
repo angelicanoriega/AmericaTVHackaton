@@ -4,9 +4,11 @@ const guardaDatos = (user) => {
     nombre: user.displayName,
     email: user.email,
     foto: user.photoURL,
+    // company: user.company,
+    type: user.type
   }
-  firebase.firestore().ref('Users/' + user.uid)
-  .set(usuario)
+  firebase.database().ref('Users/' + user.uid)
+  .createUserWithEmailAndPassword(usuario)
 }
 
 const close = () => {
@@ -16,21 +18,23 @@ const close = () => {
   };
 const register1 = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .ther(result => {
+    .then(result => {
       const user = {
         uid: result.user.uid,
-        displayName: email_login.value,
+        displayName: email,
         email: result.user.email,
         photoURL: 'http:subirimagen.me/uploads/20180725011911.png',
-        // type:
+        type: 'agency',
+        // company: company
+//
       }
-      guardaDatos(user)
+      firebase.database().ref('Users/' + result.user.uid)
+      .push(user)
   })
 }
 
 const login1 = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(result => {
-      alert('hola mundo')
     })
 }
