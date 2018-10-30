@@ -10,77 +10,34 @@
 </head>
 
 <body>
-  <div class="login">
-    <form id="formLogin">
+  <div id="LoginStar">
+    <form>
       <div class="imgcontainer">
-        <img src="https://banner2.kisspng.com/20180616/sxr/kisspng-avatar-computer-icons-avatar-icon-5b254abb7cf344.7556131215291706195118.jpg" alt="Avatar" class="avatar">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">
-        <label for="email_login"><b>Email</b></label>
-        <input type="email" id="email_login" placeholder="Email" type="email_login" required>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" id="email_login">
 
-        <label for="password_login"><b>Password</b></label>
+        <label for="psw"><b>Password</b></label>
+        <input id="passwordLogin" type="password" placeholder="Enter Password" name="psw" required>
 
-        <input type="password" placeholder="Enter Password" name="psw" id="password_login" required>
-
-        <button type="button" class='buttonLogin' id="login">Login</button>
+        <button type="button" id="login">Login</button>
 
       </div>
-
       <div>
-        <p class="go-register">¿Todavía no eres miembro?</p><a href="#" id="registerLink" class="link-to-register"> Únete ahora</a>
+      <div>
+        <a href="register.html">Regístrate</a>
+      </div>
       </div>
     </form>
   </div>
-
-
-
-  <!-- registro -->
-  <div id="formRegister" class="hidden">
-    <form>
-      <p class="slogan">¡Conéctate con un estilo de vida saludable!</p>
-      <p class="valid-inputs" id="valid-inputs"> </p>
-      <div class="inputs">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">person_outline</i>
-          <input id="nameUser" type="text" class="validate">
-          <label for="nameUser">Nombre</label>
-        </div>
-      </div>
-
-      <div class="inputs">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">mail_outline</i>
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="inputs">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">lock_outline</i>
-          <input id="password" type="password" class="validate">
-          <label for="password">Contraseña</label>
-          <span id="error-password"></span>
-        </div>
-      </div>
-      <div class="inputs">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">check</i>
-          <input id="confirPassword" type="password">
-          <label for="confirPassword">Confirmar contraseña</label>
-        </div>
-      </div>
-      <a href="#terms" id="registerButton" class="btn modal-trigger light-green darken-2"> Registrar</a>
-    </form>
-  </div>
-
-
-    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
-    <script src="js/firebase.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
   </body>
 
 </html>
