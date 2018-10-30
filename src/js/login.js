@@ -4,8 +4,10 @@ const guardaDatos = (user) => {
     nombre: user.displayName,
     email: user.email,
     foto: user.photoURL,
+    // company: user.company,
+    type: user.type
   }
-  firebase.firestore().ref('Users/' + user.uid)
+  firebase.database().ref('Users/' + user.uid)
   .set(usuario)
 }
 
@@ -19,18 +21,20 @@ const register1 = (email, password) => {
     .then(result => {
       const user = {
         uid: result.user.uid,
-        displayName: email_login.value,
+        displayName: email_login,
         email: result.user.email,
         photoURL: 'http:subirimagen.me/uploads/20180725011911.png',
-        // type:
+        type: 'agency',
+        // company: company
+// 
       }
-      guardaDatos(user)
+      firebase.database().ref('Users/' + result.user.uid)
+      .set(user)
   })
 }
 
 const login1 = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(result => {
-      alert('hola mundo')
     })
 }
