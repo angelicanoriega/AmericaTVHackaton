@@ -16,7 +16,7 @@ const close = () => {
   };
 const register1 = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .ther(result => {
+    .then(result => {
       const user = {
         uid: result.user.uid,
         displayName: email_login.value,
