@@ -26,7 +26,7 @@ const register1 = (email, password) => {
         photoURL: 'http:subirimagen.me/uploads/20180725011911.png',
         type: 'agency',
         // company: company
-// 
+//
       }
       firebase.database().ref('Users/' + result.user.uid)
       .set(user)

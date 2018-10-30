@@ -12,6 +12,5 @@ window.onload = () => {
 }
 
 register.addEventListener('click', () => {
-  console.log('hola');
   register1(email.value, password.value)
 })
