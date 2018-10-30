@@ -1,9 +1,11 @@
-import $ from 'jquery';
-import 'fullcalendar';
-import 'fullcalendar-scheduler'
-
+let programs = ['AMERICA NOTICIAS: PRIMERA EDICION: LOCAL', 'AMERICA NOTICIAS: PRIMERA EDICION', 'AMERICA DEPORTES', 'AMERICA NOTICIAS: PRIMERA EDICION', 'TN. EL PRIVILEGIO DE AMAR', 'TN. MARIMAR', 'LOS AMORES DE POLO', 'AMERICA NOTICIAS: EDICION DEL MEDIODIA', 'EN BOCA DE TODOS']
 const close1 = document.getElementById('close');
 const name = document.getElementById('name');
+const hour = document.getElementById('hour');
+const programName = document.getElementById('programName');
+const date = document.getElementById('date');
+const guardar = document.getElementById('guardar');
+
 
 close1.addEventListener('click', () => {
   close()
@@ -25,15 +27,6 @@ window.onload = () => {
   })
 }
 
-
-$('#calendar').fullCalendar({
-  header: {
-    center: 'month,timelineFourDays'
-  },
-  views: {
-    timelineFourDays: {
-      type: 'timeline',
-      duration: { days: 4 }
-    }
-  }
-});
+guardar.addEventListener('click', () => {
+  saveProgram(hour.value, hourFinal.value, programName.value, date.value)
+})
