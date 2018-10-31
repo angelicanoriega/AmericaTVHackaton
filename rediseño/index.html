@@ -13,7 +13,8 @@
 
 <body>
     <!-- primera vista -->
-    <div class="">
+    <!-- iniciar secion -->
+    <div id="login">
         <div class="container-fluid  color fixed-top">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -48,7 +49,8 @@
                                     <input type="button" value="INGRESAR" class="p-1 btn color">
                                 </div>
                                 <div class="col-md-12 pt-4 text-center ">
-                                    <p class="title tamaño">¿Primera vez aquí?<span class="text">CREAR CUENTA</span></p>
+                                    <p class="title tamaño">¿Primera vez aquí?<span class="text" id="seeRegister">CREAR
+                                            CUENTA</span></p>
                                 </div>
                             </div>
                         </div>
@@ -57,9 +59,62 @@
             </div>
         </div>
     </div>
+    <!-- fin iniciar sesion -->
+    <!-- registro de usuario -->
+    <div id="register" class="hidden">
+        <div class="container-fluid  color fixed-top">
+            <div class="row">
+                <div class="col-3 col-md-1 ">
+                    <a class="navbar-brand text-white" href="#">
+                        <img src="https://pbs.twimg.com/profile_images/1024751913668108290/ZBNNhktZ_400x400.jpg" width="70"
+                            height="70" class="d-inline-block align-top" alt="">
+                    </a>
+                </div>
+                <div class="col-9 col-md-11  text-left  d-flex align-items-center">
+                    <h1>America Tv</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid slider d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center ">
+                        <h3 class="pt-3 title">Registrate</h1>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body ">
+                            <div class="row">
+                                <div class="col-md-12 pt-3">
+                                    <input type="email" class="p-1" placeholder="Nombre">
+                                </div>
+                                <div class="col-md-12 pt-3">
+                                    <input type="email" class="p-1" placeholder="Correo">
+                                </div>
+                                <div class="col-md-12 pt-3">
+                                    <input type="password" class="p-1" placeholder="Contraseña">
+                                </div>
+                                <div class="col-md-12 pt-3">
+                                    <input type="email" class="p-1" placeholder="Compania">
+                                </div>
+                                <div class="col-md-12 pt-4 ">
+                                    <input type="button" value="Registrarse" class="p-1 btn color">
+                                </div>
+                                <div class="col-md-12 pt-4 text-center ">
+                                    <p class="title tamaño"><span class="text" id="seeRegister">RETORNAR</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin registro de usuario -->
     <!-- fin primera vist -->
     <!-- segunda vista -->
-    <div>
+    <div id="user" class="hidden">
         <div class="container-fluid fixed-top color ">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -224,6 +279,7 @@
     };
     firebase.initializeApp(config);
 </script>
+<script src="./see.js"></script>
 <script src="/data.js"></script>
 
 </html>
