@@ -3,6 +3,18 @@
 *{
    font-family: 'Montserrat', sans-serif;
 }
+.card{
+    width: 25rem;
+}
+.tal{
+    width: 35rem;
+    min-height: 400px;
+}
+
+td{
+    padding: 4px;
+    border: 1px solid  rgba(241, 241, 241, 0.7);;
+}
 .color{
     background: rgb(255, 80, 0);
     color: white;
@@ -13,11 +25,15 @@
     background-position: center;
     height: 100vh;
 }
+label{
+    color: #A9A9A9;
+}
 input{
+    cursor: pointer;
     width: 100%;
     background: white;
     border-radius: 5px;
-    border:1px solid  rgba(230, 228, 228, 0.9);;
+    border:1px solid  rgba(207, 207, 207, 0.9);
 }
 .title{
     color:  #47525E;
@@ -26,6 +42,10 @@ input{
     cursor: pointer;
     color: rgb(255, 80, 0);
     text-decoration: underline;
+}
+.text2{
+    cursor: pointer;
+    color: rgb(255, 80, 0);
 }
 .navbar{
     height: 70px;
@@ -45,4 +65,29 @@ h1{
 h5:hover{
     text-decoration: underline;
 
+}
+select{
+    width: 100%;
+}
+.see{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+}
+#btn{
+    max-width: 175px;
+}
+#btnReserv{
+    max-width: 175px;
+
+}
+.cien{
+    width: 100%;
+    border:1px solid  rgb(182, 182, 182);
+    color: rgb(182, 182, 182);
+}
+@media(max-width:630px){
+.up{
+padding-top:70px }
 }
