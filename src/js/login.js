@@ -1,15 +1,15 @@
-const guardaDatos = (user) => {
-  let usuario = {
-    uid: user.uid,
-    nombre: user.displayName,
-    email: user.email,
-    foto: user.photoURL,
-    // company: user.company,
-    type: user.type
-  }
-  firebase.database().ref('Users/' + user.uid)
-  .createUserWithEmailAndPassword(usuario)
-}
+// const guardaDatos = (user) => {
+//   let usuario = {
+//     uid: user.uid,
+//     nombre: user.displayName,
+//     email: user.email,
+//     foto: user.photoURL,
+//     // company: user.company,
+//     type: user.type
+//   }
+//   firebase.database().ref('Users/' + user.uid)
+//   .set(usuario)
+// }
 
 const close = () => {
     firebase.auth().signOut()
@@ -37,4 +37,14 @@ const login1 = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(result => {
     })
+}
+
+const saveProgram = (hour, hourFinal, programName, date) => {
+  const programas = {
+    minutes: hour,
+    hourFinal: hourFinal,
+    programName: programName,
+    date: date
+  }
+  firebase.database().ref('Programas/' + programName).push(programas)
 }

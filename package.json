@@ -1,0 +1,24 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "npm",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angiecortez/AmericaTVHackaton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angiecortez/AmericaTVHackaton/issues"
+  },
+  "homepage": "https://github.com/angiecortez/AmericaTVHackaton#readme",
+  "dependencies": {
+    "fullcalendar": "^3.9.0",
+    "fullcalendar-scheduler": "^1.9.4",
+    "jquery": "^3.3.1"
+  }
+}

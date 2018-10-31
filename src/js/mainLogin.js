@@ -6,10 +6,14 @@ const passwordLogin = document.getElementById('passwordLogin');
 window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      window.location = "form.html"
+      alert('hola')
+      window.location = "calendario.html"
     }
   })
 }
 login.addEventListener('click', () => {
   login1(email_login.value, passwordLogin.value)
 })
+
+// let userUid = firebase.auth().currentUser;
+// console.log(userUid);
