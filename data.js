@@ -118,7 +118,6 @@ btn.addEventListener('click', () => {
 
 const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array) => {
     if (6 > array.length) {
-
         const tr = document.createElement("tr");
         const td = document.createElement("td");
         const td2 = document.createElement("td");
@@ -166,11 +165,8 @@ const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array)
                         firebase.database().ref().child(`/Programas/${nameProgram}/${element}`).update({
                             "state": "true"
                         });
-
                     }
                 });
-
-
             })
         })
     } else {
