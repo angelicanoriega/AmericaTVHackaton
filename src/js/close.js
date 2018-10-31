@@ -5,6 +5,9 @@ const hour = document.getElementById('hour');
 const programName = document.getElementById('programName');
 const date = document.getElementById('date');
 const guardar = document.getElementById('guardar');
+const price = document.getElementById('price');
+const select = document.getElementById('select');
+const type = document.getElementById('type');
 
 
 close1.addEventListener('click', () => {
@@ -28,5 +31,10 @@ window.onload = () => {
 }
 
 guardar.addEventListener('click', () => {
-  saveProgram(hour.value, hourFinal.value, programName.value, date.value)
+  saveProgram(hour.value, hourFinal.value, programName.value, date.value, price.value, select.value, type.value)
+})
+
+firebase.database().ref('Programas/').on('value', data => {
+  let data1 = data.val()
+  console.log(data1);
 })
