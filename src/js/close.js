@@ -21,7 +21,7 @@ window.onload = () => {
       firebase.database().ref('Users/' + userUid).on('value', (userRef) => {
         let user = userRef.val();
         console.log(user);
-        name.innerHTML += `<p>${user.displayName}</p>`
+        // name.innerHTML += `<p>${user.displayName}</p>`
       })
     }
   })
