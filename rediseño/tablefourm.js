@@ -15,7 +15,6 @@ const see = (element, html) => {
     SinDuplicados = element.filter((elem, pos) => {
         return element.indexOf(elem) == pos;
     });
-
     for (let index = 0; index < SinDuplicados.length; index++) {
         option += '<option >' + SinDuplicados[index] + '</option>';
         html.innerHTML = option
@@ -31,7 +30,6 @@ const searchDay = (program) => {
 const searchHour = (program, time) => {
     const hour = [];
     firebase.database().ref('Programas').child(program).on("child_added", snap => {
-        console.log(snap.val());
         if (snap.val().date === time) {
             // if (snap.val().state==='true') {
             hour.push(snap.val().inicio + ' - ' + snap.val().fin);
@@ -80,26 +78,13 @@ day.addEventListener('click', () => {
 let acum = [];
 
 btn.addEventListener('click', () => {
-    // firebase.database().ref().child('usuario').set(acum);
-
-    firebase.database().ref('Programas').child(programa.value).on("value", snap => {
-        const keys = Object.keys(snap.val());
-        keys.forEach(element => {
-            if (snap.val()[element].inicio === day.value.slice(0, 5)) {
-                console.log('key',element);
-                console.log('programa',programa.value);
-                
-                firebase.database().ref().child(`/Programas/${programa.value}/${element}`).update({
-                    "state": "false"
-                });
-
-            }
-        });
-
-
-    })
     const money = price.innerHTML;
     showData(product.value, programa.value, fech.value, day.value, money, acum);
+    console.log(acum);
+    
+    btnReserv.addEventListener('click', () => {
+        firebase.database().ref().child('usuario').set(acum);
+    })
     document.getElementById('calcul').addEventListener('click', () => {
         let contador = 0
         acum.forEach(element => {
@@ -107,15 +92,11 @@ btn.addEventListener('click', () => {
         });
         document.getElementById('total').innerHTML = contador;
     })
-    btnReserv.addEventListener('click', () => {
-        firebase.database().ref().child('usuario').set(acum);
-        console.log(acum);
-
-    })
 
 })
 
 const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array) => {
+
     if (6 > array.length) {
         const tr = document.createElement("tr");
         const td = document.createElement("td");
@@ -155,20 +136,6 @@ const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array)
         array.push(obj)
         btn.addEventListener('click', () => {
             tr.remove();
-            array.splice(array.indexOf(array), 1);
-            firebase.database().ref('Programas').child(nameProgram).on("value", snap => {
-                const keys = Object.keys(snap.val());
-                keys.forEach(element => {
-                    if (snap.val()[element].inicio === day.value.slice(0, 5)) {
-                        console.log(element);
-                        console.log('key',element);
-                        console.log('programa',nameProgram);
-                        firebase.database().ref().child(`/Programas/${nameProgram}/${element}`).update({
-                            "state": "false"
-                        });
-                    }
-                });
-            })
         })
     } else {
         alert('llegaste al maximo tiempo en pantalla')

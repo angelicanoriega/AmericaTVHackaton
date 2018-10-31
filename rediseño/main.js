@@ -8,7 +8,7 @@ window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       console.log(user);
-      alert('iniciando...')
+      alert('iniciando...');
       document.getElementById('userdisplay').removeAttribute('class');
       registersee.setAttribute('class', 'hidden');
       loginsee.setAttribute('class', 'hidden');
