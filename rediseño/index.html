@@ -14,7 +14,7 @@
 <body>
     <!-- primera vista -->
     <!-- iniciar secion -->
-    <div id="login">
+    <div id="logindisplay">
         <div class="container-fluid  color fixed-top">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -40,13 +40,14 @@
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-md-12 pt-3">
-                                    <input type="email" class="p-1" placeholder="Correo">
+                                    <input type="text" class="p-1" id="email_login" placeholder="Correo">
                                 </div>
                                 <div class="col-md-12 pt-4">
-                                    <input type="password" class="p-1" placeholder="Contraseña">
+                                    <input type="password" class="p-1" id="passwordLogin" placeholder="Contraseña"
+                                        required>
                                 </div>
                                 <div class="col-md-12 pt-5 ">
-                                    <input type="button" value="INGRESAR" class="p-1 btn color">
+                                    <input type="button" value="INGRESAR" id="login" class="p-1 btn color">
                                 </div>
                                 <div class="col-md-12 pt-4 text-center ">
                                     <p class="title tamaño">¿Primera vez aquí?<span class="text" id="seeRegister">CREAR
@@ -61,7 +62,7 @@
     </div>
     <!-- fin iniciar sesion -->
     <!-- registro de usuario -->
-    <div id="register" class="hidden">
+    <div id="registerdisplay" class="hidden">
         <div class="container-fluid  color fixed-top">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -87,22 +88,23 @@
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-md-12 pt-3">
-                                    <input type="email" class="p-1" placeholder="Nombre">
+                                    <input type="email" class="p-1" placeholder="Nombre" id="name">
                                 </div>
                                 <div class="col-md-12 pt-3">
-                                    <input type="email" class="p-1" placeholder="Correo">
+                                    <input type="email" class="p-1" placeholder="Correo" id="email">
                                 </div>
                                 <div class="col-md-12 pt-3">
-                                    <input type="password" class="p-1" placeholder="Contraseña">
+                                    <input type="password" class="p-1" placeholder="Contraseña" id="password">
                                 </div>
                                 <div class="col-md-12 pt-3">
-                                    <input type="email" class="p-1" placeholder="Compania">
+                                    <input type="email" class="p-1" placeholder="Compania" id="register">
                                 </div>
                                 <div class="col-md-12 pt-4 ">
                                     <input type="button" value="Registrarse" class="p-1 btn color">
                                 </div>
                                 <div class="col-md-12 pt-4 text-center ">
-                                    <p class="title tamaño"><span class="text" id="seeRegister">RETORNAR</span></p>
+                                    <p class="title tamaño">¿Ya tienes cuenta?<span class="text" id="seeLogin">INICIAR
+                                            SESIÓN</span></p>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +116,7 @@
     <!-- fin registro de usuario -->
     <!-- fin primera vist -->
     <!-- segunda vista -->
-    <div id="user" class="hidden">
+    <div id="userdisplay" class="hidden">
         <div class="container-fluid fixed-top color ">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -128,13 +130,13 @@
                 </div>
                 <div class="col-12 col-md-6 text-center d-flex justify-content-center align-items-center">
                     <div class="row text-center">
-                        <div class="col-12 col-md-3">
+                        <div id="btnreservar" class="col-12 col-md-3">
                             <h5>RESERVAR</h5>
                         </div>
-                        <div class="col-12 col-md-5 ">
+                        <div id="btnMisreservar" class="col-12 col-md-5 ">
                             <h5>MIS RESERVAS</h5>
                         </div>
-                        <div class="col-12 col-md-4 ">
+                        <div id="btnprogramacion" class="col-12 col-md-4 ">
                             <h5>PROGRAMACIÓN</h5>
                         </div>
                     </div>
@@ -142,122 +144,133 @@
                 <div class="col-12 col-md-3 text-center d-flex justify-content-center align-items-center">
                     <div class="row">
                         <div class="col-md-12">
-                            NOMBRE
+                            <p id="usernamedisplay"></p>
                         </div>
                         <div class="col-md-12">
-                            <input type="button" value="Cerrar Sesión" class="text2">
+                            <input type="button" value="Cerrar Sesión" id="close" class="text2">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid slider d-flex justify-content-center align-items-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row text-center">
-                        <!-- primer formulario -->
-                        <div class="col-md-2"></div>
-                        <div class="col-md-4 pt-5 up">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="text-center ">
-                                        <h4 class="pt-5 title">Datos de reserva</h4>
+        <div id="reservar">
+            <div class="container-fluid slider d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-md-12 pt-5">
+                        <div class="row text-center">
+                            <!-- primer formulario -->
+                            <div class="col-md-6 pt-5 up">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-center ">
+                                            <h4 class="pt-5 title">Datos de reserva</h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
-                                    <div class="card">
-                                        <div class="card-body ">
-                                            <div class="row">
-                                                <div class="col-md-12 pt-3">
-                                                    <label for="product">Producto a anunciar</label>
-                                                    <select id="product" class="p-1"></select>
-                                                </div>
-                                                <div class="col-md-12 pt-4">
-                                                    <label for="pro">Programa</label>
-                                                    <select id="pro"></select>
-                                                </div>
-                                                <div class="col-md-12 pt-4 ">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label for="date">Fecha</label>
-                                                            <select id="date"></select>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="day">Hora</label>
-                                                            <select id="day"></select>
+                                    <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
+                                        <div class="card">
+                                            <div class="card-body ">
+                                                <div class="row">
+                                                    <div class="col-md-12 pt-3">
+                                                        <label for="product">Producto a anunciar</label>
+                                                        <select id="product" class="p-1"></select>
+                                                    </div>
+                                                    <div class="col-md-12 pt-4">
+                                                        <label for="pro">Programa</label>
+                                                        <select id="pro"></select>
+                                                    </div>
+                                                    <div class="col-md-12 pt-4 ">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="date">Fecha</label>
+                                                                <select id="date"></select>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="day">Hora</label>
+                                                                <select id="day"></select>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12 pt-4">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label for="price">total</label>
-                                                            <p id="price" class="cien "></p>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <label for="extra">Recarga</label>
-                                                            <p id="extra" class="cien"></p>
+                                                    <div class="col-md-12 pt-4">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="price">total</label>
+                                                                <p id="price" class="cien "></p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="extra">Recarga</label>
+                                                                <p id="extra" class="cien"></p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12 pt-3">
-                                                    <input type="button" value="Poner en lista" id="btn">
+                                                    <div class="col-md-12 pt-3">
+                                                        <input type="button" value="Poner en lista" id="btn">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- fin de primer formulario -->
-                        <!-- segundo formulario -->
-                        <div class="col-md-4 pt-5 ">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="text-center ">
-                                        <h4 class="pt-5 title">Lista de reserva</h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
-                                    <div class="card tal text-center">
-                                        <div class="card-body">
-                                            <table id="table">
-                                                <tr>
-                                                    <td>Producto</td>
-                                                    <td>Programa</td>
-                                                    <td>Fecha</td>
-                                                    <td>Hora</td>
-                                                    <td>Precio</td>
-                                                    <td>------</td>
-                                                </tr>
-                                            </table>
+                            <!-- fin de primer formulario -->
+                            <!-- segundo formulario -->
+                            <div class="col-md-6 pt-5 ">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-center ">
+                                            <h4 class="pt-5 title">Lista de reserva</h4>
                                         </div>
-                                        <div class="card-footer bg-white border border-top-0">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="button" id="calcul" value="total">
-                                                </div>
-                                                <div class="col-md-6 cien border border-top-0 border-right-0 border-left-0">
-                                                    <p id="total"></p>
-                                                </div>
-                                                <div class="col-md-12 pt-3">
-                                                    <input type="button" value="Reservar" id="btnReserv">
+                                    </div>
+                                    <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
+                                        <div class="card tal text-center">
+                                            <div class="card-body">
+                                                <table id="table">
+                                                    <tr>
+                                                        <td>Producto</td>
+                                                        <td>Programa</td>
+                                                        <td>Fecha</td>
+                                                        <td>Hora</td>
+                                                        <td>Precio</td>
+                                                        <td>------</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="card-footer bg-white border border-top-0">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <input type="button" id="calcul" value="total">
+                                                    </div>
+                                                    <div class="col-md-6 cien border border-top-0 border-right-0 border-left-0">
+                                                        <p id="total"></p>
+                                                    </div>
+                                                    <div class="col-md-12 pt-3">
+                                                        <input type="button" value="Reservar" id="btnReserv">
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- fin de sefgundo formulario -->
                         </div>
-                        <div class="col-md-2"></div>
-                        <!-- fin de sefgundo formulario -->
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="misreservas" class="hidden">
+            <div class="container-fluid slider d-flex justify-content-center align-items-center">
+                <h1>Mis Reservas</h1>
+            </div>
+        </div>
+        <div id="Progración" class="hidden">
+            <div class="container-fluid slider d-flex justify-content-center align-items-center">
+                    <h1>Programación</h1>
             </div>
         </div>
     </div>
     <!-- fin segunda vist -->
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -280,6 +293,12 @@
     firebase.initializeApp(config);
 </script>
 <script src="./see.js"></script>
-<script src="/data.js"></script>
+<script src="./tablefourm.js"></script>
+<script src="./login.js"></script>
+<script src="./main.js"></script>
+<script src="./mainLogin.js"></script>
+<script src="./close.js"></script>
+<script src="./data.js"></script>
+<script src="./modal.js"></script>
 
 </html>

@@ -6,9 +6,14 @@
 .card{
     width: 25rem;
 }
-.tal{
+.tal {
     width: 35rem;
-    min-height: 400px;
+    height: 400px;
+}
+.tal .card-body{
+    width: 35rem;
+    height: 400px;
+overflow:auto;
 }
 
 td{
