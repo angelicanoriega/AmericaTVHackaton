@@ -31,6 +31,8 @@ const searchDay = (program) => {
 const searchHour = (program, time) => {
     const hour = [];
     firebase.database().ref('Programas').child(program).on("child_added", snap => {
+        console.log(snap.val());
+        
         if (snap.val().date === time) {
             if (snap.val().state==='true') {
             hour.push(snap.val().inicio + ' - ' + snap.val().fin);
@@ -38,7 +40,6 @@ const searchHour = (program, time) => {
             } else {
 
             }
-
         }
     })
 }
