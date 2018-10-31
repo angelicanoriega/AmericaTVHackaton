@@ -26,10 +26,9 @@ const register1 = (email, password) => {
         photoURL: 'http:subirimagen.me/uploads/20180725011911.png',
         type: 'agency',
         // company: company
-//
       }
       firebase.database().ref('Users/' + result.user.uid)
-      .set(user)
+      .push(user)
   })
 }
 
@@ -39,12 +38,15 @@ const login1 = (email, password) => {
     })
 }
 
-const saveProgram = (hour, hourFinal, programName, date) => {
+const saveProgram = (hour, hourFinal, programName, date, price, select, type) => {
   const programas = {
-    minutes: hour,
-    hourFinal: hourFinal,
+    inicio: hour,
+    fin: hourFinal,
     programName: programName,
-    date: date
+    date: date,
+    price: price,
+    select: select,
+    type: type
   }
   firebase.database().ref('Programas/' + programName).push(programas)
 }

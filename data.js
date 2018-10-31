@@ -31,14 +31,13 @@ const searchDay = (program) => {
 const searchHour = (program, time) => {
     const hour = [];
     firebase.database().ref('Programas').child(program).on("child_added", snap => {
+        console.log(snap.val());
+        
         if (snap.val().date === time) {
             // if (snap.val().state==='true') {
             hour.push(snap.val().inicio + ' - ' + snap.val().fin);
             see(hour, day);
             // } else {
-
-            // }
-
         }
     })
 }
@@ -117,7 +116,6 @@ btn.addEventListener('click', () => {
 
 const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array) => {
     if (6 > array.length) {
-
         const tr = document.createElement("tr");
         const td = document.createElement("td");
         const td2 = document.createElement("td");
@@ -165,11 +163,8 @@ const showData = (nameProduct, nameProgram, nameFech, nameday, nameMoney, array)
                         firebase.database().ref().child(`/Programas/${nameProgram}/${element}`).update({
                             "state": "false"
                         });
-
                     }
                 });
-
-
             })
         })
     } else {

@@ -12,34 +12,43 @@
 
 <body>
     <div class="container">
-        <select name="" id="product"></select>
-        <select name="" id="pro"></select>
-        <select name="" id="date"></select>
-        <select name="" id="day"></select>
-        <p>total</p>
-        <p id="price"></p>
-        <p>Recarga</p>
-        <p id="extra"></p>
-        <input type="button" value="Poner en lista" id="btn">
-        <table  id="table">
-            <tr>
-                <td>Producto</td>
-                <td>Programa</td>
-                <td>Fecha</td>
-                <td>Hora</td>
-                <td>Precio</td>
-                <td>------</td>
-            </tr>
-        </table>
-        <table  >
-            <tr>
-                <td>
-                    <button id="calcul">TOTAL</button></td>
-                <td id="total"></td>
-            </tr>
-        </table>
-        <input type="button" value="Reservar" id="btnReserv">
-        
+        <div class="row">
+            <div class="col products">
+                <h3>Datos de Reserva</h3>
+                <select name="" id="product"></select>
+                <select name="" id="pro"></select>
+                <select name="" id="date"></select>
+                <select name="" id="day"></select>
+                <p>total</p>
+                <p id="price"></p>
+                <p>Recarga</p>
+                <p id="extra"></p>
+                <input type="button" value="Reservar" id="btn">
+            </div>
+            <div class="col reservas">
+                <h3>Lista de Reservas</h3>
+                <table  id="table">
+                        <tr>
+                            <td>Producto</td>
+                            <td>Programa</td>
+                            <td>Fecha</td>
+                            <td>Hora</td>
+                            <td>Precio</td>
+                            <td>------</td>
+                        </tr>
+                    </table>
+                    <table  >
+                        <tr>
+                            <td>
+                                <button id="calcul">TOTAL</button></td>
+                            <td id="total"></td>
+                        </tr>
+                    </table>
+                    <input type="button" value="Reservar" id="btnReserv">
+                    
+            </div>
+        </div>
+       
     </div>
     
 </body>
