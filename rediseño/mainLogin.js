@@ -6,7 +6,6 @@ const passwordLogin = document.getElementById('passwordLogin');
 window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      alert('iniciando...');
       document.getElementById('userdisplay').removeAttribute('class');
       registersee.setAttribute('class', 'hidden');
       loginsee.setAttribute('class', 'hidden');
