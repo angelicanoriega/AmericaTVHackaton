@@ -34,5 +34,5 @@ guardar.addEventListener('click', () => {
 
 firebase.database().ref('Programas/').on('value', data => {
   let data1 = data.val()
-  console.log(data1);
+  // console.log(data1);
 })
