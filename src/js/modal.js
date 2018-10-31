@@ -1,6 +1,6 @@
-const modal= document.querySelector(".Modal");
-const content = document.querySelector("#contenedor");
-const bodyTable=document.querySelector("#bodyTable")
+// const modal= document.querySelector(".Modal");
+const content = document.querySelectorAll(".contenedor");
+const bodyTable = document.getElementById("bodyTable");
 const th = document.querySelector("#th")
 
 const diasSemana = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
@@ -18,19 +18,11 @@ const dayWeekend = [
 const getData2 = () =>{
     firebase.database().ref().child('Programas').on("value", snap => {
         const arrayHoras = Object.values(snap.val());
+        const arrayHoras1 = Object.keys(snap.val());
+        // console.log(arrayHoras1);
         catchData(arrayHoras)
     })
 }
-
-// const dayWeekend1 = () => {
-//   content.innerHTML = ''
-//   dayWeekend.forEach(day => {
-//   content.innerHTML +=
-//   `
-//     <th>${day.date}</th>
-//   `
-//   })
-// }
 
 const removeDuplicates = arr => {
     let unique_array = []
@@ -43,47 +35,76 @@ const removeDuplicates = arr => {
 }
 const catchData = (programName1) => {
   let dateDeHora = []
+  let crearTabla = []
   programName1.forEach(hora => {
     let data = Object.values(hora)
+    // console.log(data);
     data.forEach(data1 => {
-      // console.log(data1);
-      const obj={
+      dateDeHora.push(`${data1.inicio} - ${data1.fin}`)
+      const obj= {
         // number: parseInt(data1.inicio.slice(0,2)),
         number: parseInt(data1.inicio),
         string:`${data1.inicio} - ${data1.fin}`,
         price: data1.price,
         programName: data1.programName,
-        select: data1.select
-
+        select: data1.select,
+        date: data1.date
       }
-    // console.log(obj);
-      dateDeHora.push(obj)
-
+      crearTabla.push(obj)
       })
-
   })
-  // console.log(dateDeHora);
-  dateDeHora.sort((a,b)=> a.number-b.number);
-  // console.log(dateDeHora);
-  bodyTable.innerHTML = ""
-  let nonDuplicates = removeDuplicates(dateDeHora).forEach(data => {
-    bodyTable.innerHTML =
-          `<tr>
-              <th>${data.string}</th>
-          </tr>
-            `
-    dayWeekend.forEach(data2 => {
-      content.innerHTML +=
-      `
-          <td>${data2.date}</td>
+  let completeData = crearTabla;
 
-        `
-    })
-  })
+  let dateDeHora1 = dateDeHora.sort()
+  let dateDeHora2 =  dateDeHora1.filter(date => date !== undefined)
+  let dateDeHora3 = valoreUnicos(dateDeHora2)
+  // console.log(dateDeHora3);
+  genera_tabla(dateDeHora3, completeData)
+}
+
+const valoreUnicos = (horas) => [...new Set(horas)]
+
+const genera_tabla = (dateDeHora3, completeData) => {
+  // console.log(dayWeekend);
+  let body = document.getElementById('contenedorPerfecto')
+  let table = document.createElement('table')
+  let tbody = document.createElement('tbody')
+  for (let i = 0; i < dateDeHora3.length; i++) {
+    let hilera = document.createElement('tr')
+    if (i > 0) {
+        // console.log(hora);
+        let celda = document.createElement('th')
+        let textCelda = document.createTextNode(dateDeHora3[i])
+        celda.appendChild(textCelda)
+        hilera.appendChild(celda)
+    }
+    for (let j = 0; j < 8; j++) {
+      if (i === 0) {
+        let date = dayWeekend[j].date
+        let celda = document.createElement('td')
+        let textCelda = document.createTextNode(date)
+        celda.appendChild(textCelda)
+        hilera.appendChild(celda)
+      }
+      if (i !== 0 && j !== 0) {
+        // let date = completeData[j]
+        let celda = document.createElement('td')
+        let textCelda = document.createTextNode(date)
+        celda.appendChild(textCelda)
+        hilera.appendChild(celda)
+      }
+    }
+    tbody.appendChild(hilera)
+  }
+  table.appendChild(tbody)
+  body.appendChild(table)
+  table.setAttribute('border', '2')
 
 }
 
 getData2()
+// valoreUnicos()
+genera_tabla()
 // dayWeekend1()
 
 // paintTable()
