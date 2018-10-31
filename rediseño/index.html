@@ -13,7 +13,7 @@
 
 <body>
     <!-- primera vista -->
-    <div class="hidden">
+    <div class="">
         <div class="container-fluid  color fixed-top">
             <div class="row">
                 <div class="col-3 col-md-1 ">
@@ -60,7 +60,7 @@
     <!-- fin primera vist -->
     <!-- segunda vista -->
     <div>
-        <div class="container-fluid  color fixed-top">
+        <div class="container-fluid fixed-top color ">
             <div class="row">
                 <div class="col-3 col-md-1 ">
                     <a class="navbar-brand text-white" href="#">
@@ -84,34 +84,119 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-3"></div>
+                <div class="col-12 col-md-3 text-center d-flex justify-content-center align-items-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            NOMBRE
+                        </div>
+                        <div class="col-md-12">
+                            <input type="button" value="Cerrar Sesión" class="text2">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-fluid slider d-flex justify-content-center align-items-center">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="text-center ">
-                        <h3 class="pt-3 title">Reserva de Publicidad online</h1>
-                    </div>
-                </div>
-                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body ">
+                    <div class="row text-center">
+                        <!-- primer formulario -->
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 pt-5 up">
                             <div class="row">
-                                <div class="col-md-12 pt-3">
-                                    <input type="email" class="p-1" placeholder="Correo">
+                                <div class="col-md-12">
+                                    <div class="text-center ">
+                                        <h4 class="pt-5 title">Datos de reserva</h4>
+                                    </div>
                                 </div>
-                                <div class="col-md-12 pt-4">
-                                    <input type="password" class="p-1" placeholder="Contraseña">
-                                </div>
-                                <div class="col-md-12 pt-5 ">
-                                    <input type="button" value="INGRESAR" class="p-1 btn color">
-                                </div>
-                                <div class="col-md-12 pt-4 text-center ">
-                                    <p class="title tamaño">¿Primera vez aquí?<span class="text">CREAR CUENTA</span></p>
+                                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
+                                    <div class="card">
+                                        <div class="card-body ">
+                                            <div class="row">
+                                                <div class="col-md-12 pt-3">
+                                                    <label for="product">Producto a anunciar</label>
+                                                    <select id="product" class="p-1"></select>
+                                                </div>
+                                                <div class="col-md-12 pt-4">
+                                                    <label for="pro">Programa</label>
+                                                    <select id="pro"></select>
+                                                </div>
+                                                <div class="col-md-12 pt-4 ">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="date">Fecha</label>
+                                                            <select id="date"></select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="day">Hora</label>
+                                                            <select id="day"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 pt-4">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label for="price">total</label>
+                                                            <p id="price" class="cien "></p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="extra">Recarga</label>
+                                                            <p id="extra" class="cien"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 pt-3">
+                                                    <input type="button" value="Poner en lista" id="btn">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- fin de primer formulario -->
+                        <!-- segundo formulario -->
+                        <div class="col-md-4 pt-5 ">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center ">
+                                        <h4 class="pt-5 title">Lista de reserva</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pt-3 d-flex justify-content-center align-items-center">
+                                    <div class="card tal text-center">
+                                        <div class="card-body">
+                                            <table id="table">
+                                                <tr>
+                                                    <td>Producto</td>
+                                                    <td>Programa</td>
+                                                    <td>Fecha</td>
+                                                    <td>Hora</td>
+                                                    <td>Precio</td>
+                                                    <td>------</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="card-footer bg-white border border-top-0">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input type="button" id="calcul" value="total">
+                                                </div>
+                                                <div class="col-md-6 cien border border-top-0 border-right-0 border-left-0">
+                                                    <p id="total"></p>
+                                                </div>
+                                                <div class="col-md-12 pt-3">
+                                                    <input type="button" value="Reservar" id="btnReserv">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <!-- fin de sefgundo formulario -->
                     </div>
                 </div>
             </div>
@@ -125,5 +210,20 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB5pMprNuEYsFu1IG5HC0XR6B6SCp_Ax40",
+        authDomain: "americatv-9ab5d.firebaseapp.com",
+        databaseURL: "https://americatv-9ab5d.firebaseio.com",
+        projectId: "americatv-9ab5d",
+        storageBucket: "americatv-9ab5d.appspot.com",
+        messagingSenderId: "309230839115"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="/data.js"></script>
 
 </html>
