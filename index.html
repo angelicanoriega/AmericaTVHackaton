@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-        <div class="container">
-                <select name="" id="product"></select>
-                <select name="" id="pro"></select>
-                <select name="" id="date"></select>
-                <select name="" id="day"></select>
-                <input type="button" value="Reservar" id="btn">
-              </div>
+    <div class="container">
+        <select name="" id="product"></select>
+        <select name="" id="pro"></select>
+        <select name="" id="date"></select>
+        <select name="" id="day"></select>
+        <p>total</p>
+        <p id="price"></p>
+        <p>Recarga</p>
+        <p id="extra"></p>
+        <input type="button" value="Reservar" id="btn">
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>Programa</td>
+                <td>Fecha</td>
+                <td>Hora</td>
+                <td>Precio</td>
+            </tr>
+            <div id="table">
+            </div>
+        </table>
+    </div>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB5pMprNuEYsFu1IG5HC0XR6B6SCp_Ax40",
-    authDomain: "americatv-9ab5d.firebaseapp.com",
-    databaseURL: "https://americatv-9ab5d.firebaseio.com",
-    projectId: "americatv-9ab5d",
-    storageBucket: "americatv-9ab5d.appspot.com",
-    messagingSenderId: "309230839115"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB5pMprNuEYsFu1IG5HC0XR6B6SCp_Ax40",
+        authDomain: "americatv-9ab5d.firebaseapp.com",
+        databaseURL: "https://americatv-9ab5d.firebaseio.com",
+        projectId: "americatv-9ab5d",
+        storageBucket: "americatv-9ab5d.appspot.com",
+        messagingSenderId: "309230839115"
+    };
+    firebase.initializeApp(config);
 </script>
 <script src="./data.js"></script>
+
 </html>
