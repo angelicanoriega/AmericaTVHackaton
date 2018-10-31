@@ -1,5 +1,6 @@
 const btn = document.getElementById('btn');
 const product = document.getElementById('product');
+const table = document.getElementById('table');
 const price = document.getElementById('price');
 const extra = document.getElementById('extra');
 const programa = document.getElementById('pro');
@@ -15,10 +16,8 @@ const see = (element, html) => {
 }
 const searchDay = (program) => {
     const array = [];
-    const hour = [];
     firebase.database().ref('Programas').child(program).on("child_added", snap => {
         array.push(snap.val().date);
-        hour.push(snap.val().inicio + ' - ' + snap.val().fin);
         see(array, fech);
     })
 }
@@ -71,19 +70,42 @@ day.addEventListener('change', () => {
 btn.addEventListener('click', () => {
     const money = price.innerHTML;
     console.log(product.value, programa.value, fech.value, day.value, money);
+    showData(product.value, programa.value, fech.value, day.value, money);
+
 })
 
 const showData = ( nameProduct,  nameProgram, nameFech,nameday,nameMoney ) => {
+ 
     const tr = document.createElement("tr");
     const td = document.createElement("td");
     const td2 = document.createElement("td");
     const td3 = document.createElement("td");
     const td4 = document.createElement("td");
     const td5 = document.createElement("td");
+    const td6 = document.createElement("td");
+    const text = document.createTextNode(nameProduct);
+    const text2 = document.createTextNode(nameProgram);
+    const text3 = document.createTextNode(nameFech);
+    const text4 = document.createTextNode(nameday);
+    const text5 = document.createTextNode(nameMoney);
+    const btn=document.createElement("button");
+    const text6 = document.createTextNode('Retirar');
+    btn.appendChild(text6)
+    td6.appendChild(btn);
     tr.appendChild(td);
     tr.appendChild(td2);
     tr.appendChild(td3);
     tr.appendChild(td4);
     tr.appendChild(td5);
+    tr.appendChild(td6);
+    td.appendChild(text);
+    td2.appendChild(text2);
+    td3.appendChild(text3);
+    td4.appendChild(text4);
+    td5.appendChild(text5);
+    table.appendChild(tr);
+    btn.addEventListener('click',()=>{
+        tr.remove();
+    })
 }
-   
+     
