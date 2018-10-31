@@ -15,12 +15,10 @@ close1.addEventListener('click', () => {
 window.onload = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      console.log('existe usuario');
       // if (user.emailVerified) {
       let userUid = firebase.auth().currentUser.uid;
       firebase.database().ref('Users/' + userUid).on('value', (userRef) => {
         let user = userRef.val();
-        console.log(user);
         // name.innerHTML += `<p>${user.displayName}</p>`
       })
     }
